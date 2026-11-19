@@ -123,9 +123,10 @@ func (s *wcowSnapshotter) Commit(ctx context.Context, name, key string, opts ...
 				if err = hcsshim.ConvertToBaseLayer(path); err != nil {
 					return err
 				}
-			} else if err := s.convertScratchToReadOnlyLayer(ctx, snapshot, path); err != nil {
-				return err
-			}
+			} 
+			// else if err := s.convertScratchToReadOnlyLayer(ctx, snapshot, path); err != nil {
+			// 	return err
+			// }
 		}
 
 		usage, err := fs.DiskUsage(ctx, path)
